@@ -7,19 +7,41 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'title' => 'RRAF-Project',
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+        'title' => 'Welcome',
     ]);
 });
 
 Route::get('/portofolio', function () {
     return Inertia::render('Portofolio', [
-        'title' => 'Portofolio'
+        'title' => 'My Portofolio'
     ]);
 });
+
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'title' => 'About Me'
+    ]);
+});
+
+Route::get('/news', function () {
+    return Inertia::render('News', [
+        'title' => 'Latest News'
+    ]);
+});
+
+Route::get('/shopping', function () {
+    return Inertia::render('Shopping', [
+        'title' => 'Happy Shopping'
+    ]);
+});
+
+Route::get('/tools', function () {
+    return Inertia::render('Tools', [
+        'title' => 'Tools And Apps'
+    ]);
+});
+
+
 
 Route::get('/sign-up', function () {
     return Inertia::render('Dashboard');
