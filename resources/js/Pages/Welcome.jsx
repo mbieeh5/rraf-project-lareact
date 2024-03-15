@@ -1,12 +1,29 @@
 import BasicSection from '@/Components/BasicSection';
+import FeaturesGallery from '@/Components/FeatureGallery';
+import Features from '@/Components/Features';
 import Hero from '@/Components/Hero';
+import SwiperNews from '@/Components/SwipperNews';
 import { Head } from '@inertiajs/react';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 
 export default function Welcome(props) {
 
+  const [berita, setBerita] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://api-berita-indonesia.vercel.app/cnn/terbaru')
+      .then((response) => {
+        const data = response.data.data.posts;
+        const beritaTerbatas = data.slice(0, 20);
+        setBerita(beritaTerbatas);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
     return (
         <>
            <Head title={props.title} />
@@ -27,7 +44,9 @@ export default function Welcome(props) {
                 </BasicSection>
                 </WhiteBackgroundContainer>
                 <DarkerBackgroundContainer>
-                  
+                  <FeaturesGallery />
+                  <Features />
+                  <SwiperNews posts={berita} />
                 </DarkerBackgroundContainer>
             </HomepageWrapper>
         </>
@@ -35,7 +54,6 @@ export default function Welcome(props) {
 }
 
 const HomepageWrapper = styled.div`
-    padding-top: 5rem;
   & > :last-child {
     margin-bottom: 15rem;
   }

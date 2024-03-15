@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-type ButtonProps = PropsWithChildren<{ transparent?: boolean }>;
+type ButtonProps = PropsWithChildren<{ transparent?: string }>;
 
 const Button = styled.button<ButtonProps>`
   border: none;

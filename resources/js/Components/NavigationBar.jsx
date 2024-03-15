@@ -7,12 +7,12 @@ import RrafLogo from "./RrafLogo";
 
 const NavItems = [
     {
-        title: 'Portofolio',
-        slug: '/portofolio'
-    },
-    {
         title: 'About',
         slug: '/about'
+    },
+    {
+        title: 'News',
+        slug: '/news'
     },
     {
         title: 'Tools/App',
@@ -23,10 +23,6 @@ const NavItems = [
         slug: '/shopping'
     },
     {
-        title: 'News',
-        slug: '/news'
-    },
-    {
         title: 'SignUp',
         slug: '/sign-up'
     },
@@ -34,7 +30,7 @@ const NavItems = [
 
 const NavBar = () => {
     return (
-        <div className="md p-3 px-6 min-w-max justify-items-center flex gap-6 navbarBackground">
+        <div className="md p-10 px-6 min-w-max justify-items-center flex gap-6 navbarBackground">
             <div className="container flex">
                 <Link href='/'>
                     <RrafLogo />

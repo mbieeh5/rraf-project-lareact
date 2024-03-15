@@ -21,6 +21,9 @@
     },
     "dependencies": {
         "css-in-js-media": "^2.0.1",
-        "styled-components": "^6.1.8"
+        "react-animate-height": "^3.2.3",
+        "styled-components": "^6.1.8",
+        "swiper": "^11.0.7",
+        "use-resize-observer": "^9.1.0"
     }
 }

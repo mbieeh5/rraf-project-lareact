@@ -17,7 +17,7 @@ export default function Hero() {
          </Description>
         <CustomButtonGroup>
           <Link href="/info">
-            <Button transparent>
+            <Button transparent='true'>
               Info <span>&rarr;</span>
             </Button>
           </Link>

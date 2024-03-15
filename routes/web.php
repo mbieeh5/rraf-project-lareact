@@ -11,12 +11,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/portofolio', function () {
-    return Inertia::render('Portofolio', [
-        'title' => 'My Portofolio'
-    ]);
-});
-
 Route::get('/about', function () {
     return Inertia::render('About', [
         'title' => 'About Me'
@@ -44,8 +38,8 @@ Route::get('/tools', function () {
 
 
 Route::get('/sign-up', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Sign-Up');
+})->middleware(['auth', 'verified'])->name('Sign-Up');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
