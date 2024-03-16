@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "css-in-js-media": "^2.0.1",
+        "firebase": "^10.9.0",
         "react-animate-height": "^3.2.3",
         "styled-components": "^6.1.8",
         "swiper": "^11.0.7",

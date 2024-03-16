@@ -15,7 +15,7 @@ const footerItems: FooterItems = [
       { title: 'Features', href: '/features' },
       { title: 'Berita', href: '/berita' },
       { title: 'Tools/Apps', href: '/tools' },
-      { title: 'Games', href: '/games' },
+      { title: 'Games', href: '/tools' },
       { title: '????', href: '/hidden' },
     ],
   },

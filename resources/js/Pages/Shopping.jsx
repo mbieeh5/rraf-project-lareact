@@ -1,17 +1,20 @@
-import { Head } from '@inertiajs/react';
+import AutofitGrid from '@/Components/AutoFitGrid';
+import BasicCard from '@/Components/BasicCard';
+import BasicCardNoImg from '@/Components/BasicCardNoImg';
+import Page from '@/Components/Pages';
 
 export default function News(props) {
     return (
         <>
-            <Head title={props.title} />
+        <Page title={'Shopping'} description='Happy Shopping Take The Best Offers!'>
 
             <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">News Section!</div>
-                    </div>
-                </div>
+                <AutofitGrid>
+                    <BasicCardNoImg slug="pokemon-shop" title="Pokemon Shop's" description='Penuhi Kebutuhan & Perlengkapan Pokemonmu disini' />
+                    <BasicCardNoImg slug="undangan-online" title="Undangan Pernikahan" description='Bikin Undangan Online Juga Bisa Loh disini!' />
+                </AutofitGrid>
             </div>
+        </Page>
         </>
     );
 }
