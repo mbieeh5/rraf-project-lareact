@@ -6,22 +6,24 @@ import {app} from "../../../../firebaseConfig";
 import ShopCard from "@/Components/ShopCard";
 import AutofitGrid from "@/Components/AutoFitGrid";
 
-export default function PokemonShop(props) {
+
+export default function PokemonShop() {
 
     const [dataShop, setDataShop] = useState([]);
 
     useEffect(() => {
         const dbd = ref(getDatabase(app));
-        get(child(dbd, `dataData/delay`)).then((snapshot) => {
+        get(child(dbd, `dataData/delay`)).then(async(snapshot) => {
             if(snapshot){
-                const datas = snapshot.val();
+                const datas = snapshot.val() || {};
                 const filteredData = Object.keys(datas).reduce((acc, key) => {
                     if(key !== 'fightCooldown'){
                         acc[key] = datas[key];
                     }
                     return acc;
                 }, []);
-                setDataShop(filteredData);
+                const datasFinal = Object.values(filteredData)
+                setDataShop(datasFinal);
             }else{
                 console.error('hmmmm')
             }
@@ -30,14 +32,24 @@ export default function PokemonShop(props) {
         })
     },[])
 
+
     return(
         <>
-        <Head title={props.title}/>
             <div className="md">
                 <Page title="Welcome to Shop Adventurer" description="You Can Only Take the Best Offer's that i have!">
                     <AutofitGrid>
-                        {dataShop.map((a, i) => {
-                            <ShopCard key={i}/>
+                        {dataShop.map((a,i) => {
+                             return (
+                                <ShopCard 
+                                key={i} 
+                                ID={i}
+                                stock={a.stock}
+                                price={a.harga}
+                                img={a.img} 
+                                title={a.name} 
+                                link={'#'}
+                                description={a.desc}/>
+                                )
                         })}
                     </AutofitGrid>
                 </Page>

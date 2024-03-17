@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { media } from './Media-Utils';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
-import { Link } from '@inertiajs/react';
 
 export interface ShopCards {
   title: string;
@@ -96,19 +95,17 @@ export default function ShopCard({ title, description, img, price, stock}: ShopC
     
   return (
     <>
-    <Link href='#'>
         <HoverEffectContainer>
-      <ArticleCardWrapper className="article-card-wrapper" onClick={openPopup}>
-          <ImageContainer>
-            <ImageHolder alt={title} src={img}/>
-          </ImageContainer>
-        <Content>
-          <Title>{title}</Title>
-            <Descriptions>{description}</Descriptions>
-        </Content>
-      </ArticleCardWrapper>
+          <ArticleCardWrapper className="article-card-wrapper" onClick={openPopup}>
+              <ImageContainer>
+                <ImageHolder alt={title} src={img}/>
+              </ImageContainer>
+            <Content>
+              <Title>{title}</Title>
+                <Descriptions>{description}</Descriptions>
+            </Content>
+          </ArticleCardWrapper>
         </HoverEffectContainer>
-    </Link>
 
     {isPopupVisible && (
       <PopupForm>

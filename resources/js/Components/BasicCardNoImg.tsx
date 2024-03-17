@@ -10,7 +10,7 @@ interface BasicCardNoImgProps {
 
 export default function BasicCardNoImg({ title, slug, description }: BasicCardNoImgProps) {
   return (
-    <Link href={`/shopping/${slug}`}>
+    <Link href={slug}>
       <Card>
         <Title>{title}</Title>
         <Description>{description}</Description>

@@ -41,9 +41,7 @@ Route::get('/shopping', function () {
 });
 
 Route::get('/shopping/pokemon-shop', function () {
-    return Inertia::render('Shopping/Pokemon-shop', [
-        'title' => 'Happy Shopping'
-    ]);
+    return Inertia::render('Shopping/Pokemon-shop');
 });
 
 Route::get('/shopping/undangan-online', function () {
@@ -56,6 +54,18 @@ Route::get('/tools', function () {
     return Inertia::render('Tools', [
         'title' => 'Tools And Apps'
     ]);
+});
+
+Route::get('/tools/sum', function () {
+    return Inertia::render('Tools/Sum');
+});
+
+Route::get('/tools/bot-things', function () {
+    return Inertia::render('Tools/Bot-things');
+});
+
+Route::get('/tools/valentines', function () {
+    return Inertia::render('Tools/valentines');
 });
 
 Route::get('/hidden', function () {

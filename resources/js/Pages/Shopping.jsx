@@ -10,8 +10,8 @@ export default function News(props) {
 
             <div className="py-12">
                 <AutofitGrid>
-                    <BasicCardNoImg slug="pokemon-shop" title="Pokemon Shop's" description='Penuhi Kebutuhan & Perlengkapan Pokemonmu disini' />
-                    <BasicCardNoImg slug="undangan-online" title="Undangan Pernikahan" description='Bikin Undangan Online Juga Bisa Loh disini!' />
+                    <BasicCardNoImg slug="/shopping/pokemon-shop" title="Pokemon Shop's" description='Penuhi Kebutuhan & Perlengkapan Pokemonmu disini' />
+                    <BasicCardNoImg slug="/shopping/undangan-online" title="Undangan Pernikahan" description='Bikin Undangan Online Juga Bisa Loh disini!' />
                 </AutofitGrid>
             </div>
         </Page>
